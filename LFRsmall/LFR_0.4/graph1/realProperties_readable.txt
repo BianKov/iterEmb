@@ -1,0 +1,3 @@
+Q_real = 0.5685699158197407
+numOfComms_real = 53
+largestRelCommSize_real = 0.047
