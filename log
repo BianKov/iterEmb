@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                               count    min threads    max threads
+------------------------------  -------  -------------  -------------
+all                                   1              1              1
+concatenate_results                   1              1              1
+embedding                           601              1              1
+embedding_link_prediction           609              1              1
+eval_link_prediction_embedding      611              1              1
+total                              1823              1              1
+
+Select jobs to execute...
+
+[Tue Apr  4 09:27:37 2023]
+rule embedding:
+    input: data/derived/datasets/American75/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/American75/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~node2vecIter4_dim~64.npz
+    jobid: 247
+    reason: Missing output files: data/derived/embedding/American75/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~node2vecIter4_dim~64.npz
+    wildcards: data=American75, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=2, model=node2vecIter4, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Apr  4 09:28:47 2023]
+Error in rule embedding:
+    jobid: 247
+    input: data/derived/datasets/American75/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/American75/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~node2vecIter4_dim~64.npz
+
+Select jobs to execute...
