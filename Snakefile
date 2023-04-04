@@ -26,7 +26,7 @@ PRED_DIR = j(DERIVED_DIR, "link-prediction")
 
 DATA_LIST = [
     f.split("_")[1].split(".")[0] for f in os.listdir(RAW_UNPROCESSED_NETWORKS_DIR)
-]
+][:10]
 N_ITERATION = 5
 
 # ====================
@@ -37,7 +37,7 @@ N_ITERATION = 5
 # Negative edge sampler
 #
 params_negative_edge_sampler = {
-    "negativeEdgeSampler": ["uniform", "degreeBiased"],
+    "negativeEdgeSampler": ["uniform"],
     "testEdgeFraction": [0.5],
     "sampleId": list(range(N_ITERATION)),
 }
@@ -47,7 +47,6 @@ paramspace_negative_edge_sampler = to_paramspace(params_negative_edge_sampler)
 # Network embedding
 #
 params_emb = {"model": list(embedding_models.keys()), "dim": [64]}
-#params_emb = {"model": ["node2vec", "deepwalk", "modspec", "leigenmap"], "dim": [64]}
 paramspace_emb = to_paramspace(params_emb)
 
 
@@ -172,7 +171,7 @@ rule figs:
 rule clean_networks:
     input:
         raw_unprocessed_networks_dir=RAW_UNPROCESSED_NETWORKS_DIR,
-        raw_processed_networks_dir=RAW_PROCESSED_NETWORKS_DIR,
+        #raw_processed_networks_dir=RAW_PROCESSED_NETWORKS_DIR,
     output:
         edge_table_file=EDGE_TABLE_FILE,
     script:
