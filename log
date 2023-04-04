@@ -1,0 +1,1257 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+all                         1              1              1
+concatenate_results         1              1              1
+embedding                  40              1              1
+eval_link_prediction       40              1              1
+total                      82              1              1
+
+Select jobs to execute...
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 63
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 315
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 287
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 309
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 71
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 85
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 99
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 95
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 291
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 75
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 89
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 313
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:35 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 285
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 299
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 69
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 83
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 97
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 307
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 321
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:23:36 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 293
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:28:47 2023]
+Finished job 293.
+1 of 82 steps (1%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:28:47 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 301
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:28:52 2023]
+Finished job 313.
+2 of 82 steps (2%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:28:52 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 91
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:28:55 2023]
+Finished job 315.
+3 of 82 steps (4%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:28:55 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 295
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:28:55 2023]
+Finished job 309.
+4 of 82 steps (5%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:28:55 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 79
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:28:59 2023]
+Finished job 307.
+5 of 82 steps (6%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:28:59 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 303
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:29:01 2023]
+Finished job 321.
+6 of 82 steps (7%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:29:01 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 317
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:29:06 2023]
+Finished job 287.
+7 of 82 steps (9%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:29:06 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 93
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:29:07 2023]
+Finished job 285.
+8 of 82 steps (10%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:29:07 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 289
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:29:12 2023]
+Finished job 299.
+9 of 82 steps (11%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:29:12 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 65
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:29:24 2023]
+Finished job 291.
+10 of 82 steps (12%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:29:24 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 87
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:34:19 2023]
+Finished job 295.
+11 of 82 steps (13%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:34:19 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 101
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:34:27 2023]
+Finished job 301.
+12 of 82 steps (15%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:34:27 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 311
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:34:43 2023]
+Finished job 303.
+13 of 82 steps (16%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 294
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:43 2023]
+Error in rule eval_link_prediction:
+    jobid: 294
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 302
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:43 2023]
+Error in rule eval_link_prediction:
+    jobid: 302
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+
+[Tue Mar 28 10:34:43 2023]
+Finished job 317.
+14 of 82 steps (17%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 316
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:43 2023]
+Select jobs to execute...
+Error in rule eval_link_prediction:
+    jobid: 316
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+
+
+[Tue Mar 28 10:34:43 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 297
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 320
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:43 2023]
+Error in rule eval_link_prediction:
+    jobid: 320
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 314
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:43 2023]
+Error in rule eval_link_prediction:
+    jobid: 314
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:34:43 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 286
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:44 2023]
+Error in rule eval_link_prediction:
+    jobid: 286
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:34:44 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 73
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:34:44 2023]
+Finished job 289.
+15 of 82 steps (18%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:34:44 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    jobid: 283
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:36:47 2023]
+Finished job 89.
+16 of 82 steps (20%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 88
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 88
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 288
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 288
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 290
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 290
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 292
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 292
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 308
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 308
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 284
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 284
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:47 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 298
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:47 2023]
+Error in rule eval_link_prediction:
+    jobid: 298
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:48 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 312
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:48 2023]
+Error in rule eval_link_prediction:
+    jobid: 312
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+
+[Tue Mar 28 10:36:48 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 306
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:48 2023]
+Error in rule eval_link_prediction:
+    jobid: 306
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:48 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    jobid: 319
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:49 2023]
+Finished job 85.
+17 of 82 steps (21%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:36:49 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 84
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:49 2023]
+Error in rule eval_link_prediction:
+    jobid: 84
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:49 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    jobid: 81
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:36:51 2023]
+Finished job 83.
+18 of 82 steps (22%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:36:51 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 82
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:51 2023]
+Error in rule eval_link_prediction:
+    jobid: 82
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:51 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 77
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:52 2023]
+Finished job 71.
+19 of 82 steps (23%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:36:52 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 70
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:36:52 2023]
+Error in rule eval_link_prediction:
+    jobid: 70
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:36:52 2023]
+rule embedding:
+    input: data/derived/datasets/polblog/train-net_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.npz
+    output: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    jobid: 305
+    reason: Missing output files: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:12 2023]
+Finished job 63.
+20 of 82 steps (24%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:12 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 62
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:12 2023]
+Error in rule eval_link_prediction:
+    jobid: 62
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:37:12 2023]
+rule embedding:
+    input: data/derived/datasets/airport/train-net_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.npz
+    output: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    jobid: 67
+    reason: Missing output files: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:16 2023]
+Finished job 69.
+21 of 82 steps (26%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:16 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 68
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:16 2023]
+Error in rule eval_link_prediction:
+    jobid: 68
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~3_model~deepwalk_dim~64.csv
+
+Select jobs to execute...
+
+[Tue Mar 28 10:37:16 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 300
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:16 2023]
+Error in rule eval_link_prediction:
+    jobid: 300
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:20 2023]
+Finished job 95.
+22 of 82 steps (27%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:20 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 94
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:20 2023]
+Error in rule eval_link_prediction:
+    jobid: 94
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:34 2023]
+Finished job 99.
+23 of 82 steps (28%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:34 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 98
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:34 2023]
+Error in rule eval_link_prediction:
+    jobid: 98
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:40 2023]
+Finished job 97.
+24 of 82 steps (29%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:40 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 96
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:40 2023]
+Error in rule eval_link_prediction:
+    jobid: 96
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:37:46 2023]
+Finished job 75.
+25 of 82 steps (30%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:37:46 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 74
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:37:46 2023]
+Error in rule eval_link_prediction:
+    jobid: 74
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~1_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:39:42 2023]
+Finished job 297.
+26 of 82 steps (32%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:39:42 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 296
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:39:42 2023]
+Error in rule eval_link_prediction:
+    jobid: 296
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:39:48 2023]
+Finished job 283.
+27 of 82 steps (33%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:39:48 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 282
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:39:48 2023]
+Error in rule eval_link_prediction:
+    jobid: 282
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~0_model~deepwalk_dim~64.csv
+
+[Tue Mar 28 10:39:49 2023]
+Finished job 311.
+28 of 82 steps (34%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:39:49 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 310
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:39:49 2023]
+Error in rule eval_link_prediction:
+    jobid: 310
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:25 2023]
+Finished job 319.
+29 of 82 steps (35%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:25 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 318
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:25 2023]
+Error in rule eval_link_prediction:
+    jobid: 318
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+
+[Tue Mar 28 10:41:26 2023]
+Finished job 65.
+30 of 82 steps (37%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:26 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 64
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:26 2023]
+Error in rule eval_link_prediction:
+    jobid: 64
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:29 2023]
+Finished job 91.
+31 of 82 steps (38%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:29 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 90
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:29 2023]
+Error in rule eval_link_prediction:
+    jobid: 90
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~4_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:36 2023]
+Finished job 79.
+32 of 82 steps (39%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:36 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+    jobid: 78
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=3, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:36 2023]
+Error in rule eval_link_prediction:
+    jobid: 78
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~3_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:39 2023]
+Finished job 305.
+33 of 82 steps (40%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:39 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+    jobid: 304
+    reason: Missing output files: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    wildcards: data=polblog, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=1, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:39 2023]
+Error in rule eval_link_prediction:
+    jobid: 304
+    input: data/derived/datasets/polblog/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1.csv, data/derived/embedding/polblog/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/polblog/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~1_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:55 2023]
+Finished job 93.
+34 of 82 steps (41%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:55 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 92
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:55 2023]
+Error in rule eval_link_prediction:
+    jobid: 92
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:41:57 2023]
+Finished job 87.
+35 of 82 steps (43%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:41:57 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 86
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:41:57 2023]
+Error in rule eval_link_prediction:
+    jobid: 86
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:45:00 2023]
+Finished job 101.
+36 of 82 steps (44%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:45:00 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 100
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=degreeBiased, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:45:00 2023]
+Error in rule eval_link_prediction:
+    jobid: 100
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~degreeBiased_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:45:04 2023]
+Finished job 73.
+37 of 82 steps (45%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:45:04 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+    jobid: 72
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=0, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:45:04 2023]
+Error in rule eval_link_prediction:
+    jobid: 72
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~0_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:45:36 2023]
+Finished job 81.
+38 of 82 steps (46%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:45:36 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+    jobid: 80
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=4, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:45:36 2023]
+Error in rule eval_link_prediction:
+    jobid: 80
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~4_model~deepwalk_dim~64.csv
+
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+Ignore this message if you do not use Glove. Otherwise, install glove python package by 'pip install glove_python_binary' 
+[Tue Mar 28 10:46:08 2023]
+Finished job 67.
+39 of 82 steps (48%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:46:08 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 66
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.1, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:46:08 2023]
+Error in rule eval_link_prediction:
+    jobid: 66
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.1_sampleId~2_model~deepwalk_dim~64.csv
+
+[Tue Mar 28 10:46:09 2023]
+Finished job 77.
+40 of 82 steps (49%) done
+Select jobs to execute...
+
+[Tue Mar 28 10:46:09 2023]
+rule eval_link_prediction:
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+    jobid: 76
+    reason: Missing output files: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv; Input files updated by another job: data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    wildcards: data=airport, negativeEdgeSampler=uniform, testEdgeFraction=0.5, sampleId=2, model=deepwalk, dim=64
+    resources: tmpdir=/tmp
+
+[Tue Mar 28 10:46:09 2023]
+Error in rule eval_link_prediction:
+    jobid: 76
+    input: data/derived/datasets/airport/targetEdgeTable_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2.csv, data/derived/embedding/airport/emb_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.npz
+    output: data/derived/results/auc-roc/airport/result_negativeEdgeSampler~uniform_testEdgeFraction~0.5_sampleId~2_model~deepwalk_dim~64.csv
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-28T102334.878886.snakemake.log
