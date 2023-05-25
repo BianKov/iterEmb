@@ -1,6 +1,0 @@
-Q_detected = 0.20121225776794752
-numOfComms_detected = 10
-largestRelCommSize_detected = 0.155
-AMI_detected = 0.027535766341673765
-ARI_detected = 0.0055642272039747075
-NMI_detected = 0.123994610685729

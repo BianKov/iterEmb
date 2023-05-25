@@ -1,7 +1,0 @@
-Q_detected = 0.12117973959041545
-numOfComms_detected = 688
-largestRelCommSize_detected = 0.012
-AMI_detected = 0.2347175479359622
-ARI_detected = 0.21037353890067584
-NMI_detected = 0.790973512981412
-number of done embeddings = 1

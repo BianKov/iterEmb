@@ -1,3 +1,0 @@
-Q_real = 0.1743295165885635
-numOfComms_real = 10
-largestRelCommSize_real = 0.1
