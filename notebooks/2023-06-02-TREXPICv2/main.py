@@ -2,14 +2,16 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-02 17:30:02
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-02 18:25:39
+# @Last Modified time: 2023-06-02 18:26:20
 # %%
 import numpy as np
 import networkx as nx
 import math
 from scipy import sparse
 
-
+#
+# Bianka's impl.
+#
 def TREXPIC(G, d, q=None, K=-1):
     N = len(G)  # the number of nodes in graph G
     if N < d + 1:
