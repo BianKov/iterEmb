@@ -1,3 +1,21 @@
+# How to install
+
+
+# Setting up the environment
+```bash
+conda create -n iterEmb python=3.9
+conda activate iterEmb
+conda install -c conda-forge mamba -y
+mamba install -c conda-forge -c bioconda -c conda-forge snakemake graph-tool scikit-learn numpy==1.23.5 numba scipy pandas networkx seaborn matplotlib gensim ipykernel tqdm black -y
+```
+
+# Usage
+
+```python
+embs = iterativeEmbedding(adj, emb_func, edge_weighting_func, n_iters = 20)
+```
+
+
 # iterEmb
 
 Two executable Python files are attached:
