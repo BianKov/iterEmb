@@ -7,6 +7,12 @@ conda create -n iterEmb python=3.9
 conda activate iterEmb
 conda install -c conda-forge mamba -y
 mamba install -c conda-forge -c bioconda -c conda-forge snakemake graph-tool scikit-learn numpy==1.23.5 numba scipy pandas networkx seaborn matplotlib gensim ipykernel tqdm black -y
+
+pip install python-louvain
+pip install infomap
+
+pip install -e .
+cd libs && pip install -e .
 ```
 
 # Usage
