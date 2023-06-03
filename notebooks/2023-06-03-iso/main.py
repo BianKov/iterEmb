@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 14:21:40
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-03 14:28:30
+# @Last Modified time: 2023-06-03 14:31:50
 # %%
 import numpy as np
 import networkx as nx
@@ -274,3 +274,7 @@ retvals = expISOv2(G, d=12)
 # %%
 %%time
 retvals2 = expISO(G, d=12)
+# %%
+W = nx.adjacency_matrix(retvals2[0])
+dB = retvals[0] - W
+np.max(np.abs(dB.data))
