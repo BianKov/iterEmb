@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 06:25:33
+# @Last Modified time: 2023-06-04 06:29:17
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -171,10 +171,13 @@ def expISO(G, d, q=None, verbose=False):
     # in the original (non-exponential) algorithm: D=np.array([[shortestPathLengthsDict[s][t] for t in listOfNodes] for s in listOfNodes])
 
     # centering, i.e. the creation of the matrix of expected inner products
-    H = np.identity(N) - np.ones((N, N)) / N  # centering matrix
-    IP = (
-        -np.matmul(np.matmul(H, np.multiply(D, D)), H) / 2
-    )  # multiply=element-wise product
+    # H = np.identity(N) - np.ones((N, N)) / N  # centering matrix
+    # IP = (
+    #    -np.matmul(np.matmul(H, np.multiply(D, D)), H) / 2
+    # )  # multiply=element-wise product
+    Dsq = D**2
+    H_Dsq = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
+    IP = -H_Dsq / 2
 
     # dimension reduction
     if d == N:
