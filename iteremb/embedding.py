@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 06:17:27
+# @Last Modified time: 2023-06-04 06:25:33
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -12,8 +12,8 @@ import math
 from scipy import sparse
 import fastnode2vec  # a fast version of node2vec
 
-embedding_models = {}
-embedding_model = lambda f: embedding_models.setdefault(f.__name__, f)
+models = {}
+embedding_model = lambda f: models.setdefault(f.__name__, f)
 
 
 @embedding_model

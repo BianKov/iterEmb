@@ -2,18 +2,16 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 22:01:20
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-03 22:26:44
+# @Last Modified time: 2023-06-04 06:25:12
 import numpy as np
 from scipy import sparse
 
-weighting_models = {}
-weighting_models = lambda f: weighting_models.setdefault(f.__name__, f)
+models = {}
+weighting_model = lambda f: models.setdefault(f.__name__, f)
 
 
 @weighting_model
-def cosine_similarity(
-    A: sparse.csr_matrix, emb: np.ndarray, **params: Any
-) -> sparse.csr_matrix:
+def cosine_similarity(A, emb, **params):
     """
     Calculate the cosine similarity between embeddings and return a sparse matrix.
 
@@ -66,7 +64,7 @@ def cosine_distance(A, emb, **params):
 
 
 @weighting_model
-def exp_cosine_similarity(A, emb, q):
+def exp_cosine_similarity(A, emb, q=1):
     """
     Computes the exponential cosine similarity between each pair of items in sparse matrix A using embeddings.
 
