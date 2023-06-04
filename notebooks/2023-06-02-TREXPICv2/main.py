@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-02 17:30:02
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-02 18:26:20
+# @Last Modified time: 2023-06-03 21:46:50
 # %%
 import numpy as np
 import networkx as nx
@@ -222,10 +222,7 @@ def TREXPICv2(G, d, q=None, K=-1, verbose=False):
     ).reshape(-1)
 
     new_weights = np.clip(new_weights, 0.0, 2.0)
-    Anew = A.copy()
-
-    Anew.data = new_weights
-    Anew.eliminate_zeros()
+    Anew = sparse.csr_matrix((new_weights, (src, trg)), shape=A.shape)
 
     # I remove the conversion of the results to networkx.Graph since it is inefficient.
     return Anew, Coord
