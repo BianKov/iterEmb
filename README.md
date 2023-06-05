@@ -15,9 +15,100 @@ cd libs/fastnode2vec && pip install -e .
 # Usage
 
 ```python
-embs = iterativeEmbedding(adj, emb_func, edge_weighting_func, n_iters = 20)
+import iteremb
+import networkx as nx
+
+net = nx.adjacency_matrix(
+    nx.karate_club_graph()
+)  # the adjacency matrix (scipy sparse matrix format)
+
+new_net, emb_list, net_list = iteremb.iterative_embedding(
+    net,  # Input network
+    dim=16,  # Embedding dimension
+    **iteremb.iterative_embedding_models["TREXPIC"],  # Embedding models
+    max_iter=20,  # Maximum number of iterations
+    emb_params={},  # parameter for the embedding function
+    edge_weighting_params={},  # parameters for the edge weighting function
+    tol=1e-2,  # Tolerance. Larger value yields fewer iterations.
+)
+
+new_net  # Final network after the iterations
+emb_list  # List of embedding generated during the iteration. emb_list[t] is the one at the $t$th iteration
+net_list  # List of networks generated during the iteration. net_list[t] is the one at the $t$th iteration
 ```
 
+# Coverged models
+
+This package contains the following off-the-shelf models for iterative embedding:
+
+```python
+from iteremb import embedding, edge_weighting
+
+iterative_embedding_models = {
+    "TREXPIC": {
+        "emb_model": embedding.models["TREXPIC"],
+        "weighting_model": edge_weighting.models["cosine_distance"],
+    },
+    "expISO": {
+        "emb_model": embedding.models["expISO"],
+        "weighting_model": edge_weighting.models["cosine_distance"],
+    },
+    "ISO": {
+        "emb_model": embedding.models["ISO"],
+        "weighting_model": edge_weighting.models["cosine_distance"],
+    },
+    "LE": {
+        "emb_model": embedding.models["LE"],
+        "weighting_model": edge_weighting.models["cosine_distance"],
+    },
+    "node2vec": {
+        "emb_model": embedding.models["node2vec"],
+        "weighting_model": edge_weighting.models["cosine_similarity"],
+    },
+    "expNode2vec": {
+        "emb_model": embedding.models["node2vec"],
+        "weighting_model": edge_weighting.models["exp_cosine_similarity"],
+    },
+}
+```
+
+For example, the following is the iterative embedding with node2vec:
+
+```python
+import iteremb
+import networkx as nx
+
+net = nx.adjacency_matrix(
+    nx.karate_club_graph()
+)  # the adjacency matrix (scipy sparse matrix format)
+
+new_net, emb_list, net_list = iteremb.iterative_embedding(
+    net,  # Input network
+    dim=16,  # Embedding dimension
+    **iteremb.iterative_embedding_models["node2vec"],  # Embedding models
+    max_iter=20,  # Maximum number of iterations
+    emb_params={},  # parameter for the embedding function
+    edge_weighting_params={},  # parameters for the edge weighting function
+    tol=1e-2,  # Tolerance. Larger value yields fewer iterations.
+)
+
+new_net  # Final network after the iterations
+emb_list  # List of embedding generated during the iteration. emb_list[t] is the one at the $t$th iteration
+net_list  # List of networks generated during the iteration. net_list[t] is the one at the $t$th iteration
+```
+
+# Custom embedding and edge weighting
+
+The `iteremb` package implements several embedding models as well as edge weighting functions. The embedding models can be accessible through
+```python
+from iteremb import embedding
+embedding.models # dictionary of embedding functions
+```
+And the edge weighting function:
+```python
+from iteremb import edge_weighting
+edge_weighting.models # dictionary of embedding functions
+```
 
 # iterEmb
 

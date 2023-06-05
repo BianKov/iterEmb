@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 22:10:13
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 20:38:33
+# @Last Modified time: 2023-06-04 21:37:57
 # %%
 import numpy as np
 from iteremb import embedding
@@ -49,7 +49,7 @@ def iterative_embedding(
     return net_t, emb_list, net_list
 
 
-models = {
+iterative_embedding_models = {
     "TREXPIC": {
         "emb_model": embedding.models["TREXPIC"],
         "weighting_model": edge_weighting.models["cosine_distance"],
