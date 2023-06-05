@@ -2,9 +2,8 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 21:30:08
+# @Last Modified time: 2023-06-04 22:11:40
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import numpy as np
 import networkx as nx
@@ -21,33 +20,6 @@ from scipy import sparse
 import numpy as np
 from scipy import sparse
 import utils
-
-
-def commDetWithWeightThresholding(
-    G, whichWeightToKeep, minRemovalRate=0.05, maxRemovalRate=0.95
-):
-    """
-    Detects the community structure of a graph with weight thresholding and returns a dictionary
-    with node names as keys and group identifiers as values.
-
-    Parameters
-    ----------
-    G : networkx.Graph or scipy.sparse.csr_matrix
-        Network
-    whichWeightToKeep : str
-        The type of weight thresholding to perform.
-        'small': retain link weights BELOW a threshold if inputted weights are distance-like measures.
-        'large': retain link weights ABOVE a threshold if inputted weights are proximity-like measures.
-    minRemovalRate : float, optional
-        The allowed smallest fraction of links to be removed by the weight thresholding (default is 0.05).
-    maxRemovalRate : float, optional
-        The allowed largest fraction of links to be removed by the weight thresholding (default is 0.95).
-
-    Returns
-    -------
-    dict
-        A dictionary with node names as keys and group identifiers as values.
-    """
 
 
 def commDetWithWeightThresholding(
