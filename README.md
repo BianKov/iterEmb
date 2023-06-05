@@ -1,7 +1,4 @@
 # How to install
-
-
-# Setting up the environment
 ```bash
 conda create -n iterEmb python=3.9
 conda activate iterEmb
@@ -12,7 +9,7 @@ pip install python-louvain
 pip install infomap
 
 pip install -e .
-cd libs && pip install -e .
+cd libs/fastnode2vec && pip install -e .
 ```
 
 # Usage
