@@ -37,7 +37,7 @@ emb_list  # List of embedding generated during the iteration. emb_list[t] is the
 net_list  # List of networks generated during the iteration. net_list[t] is the one at the $t$th iteration
 ```
 
-# Coverged models
+# Off-the-shelf iterative embedding models
 
 This package contains the following off-the-shelf models for iterative embedding:
 
@@ -91,10 +91,6 @@ new_net, emb_list, net_list = iteremb.iterative_embedding(
     edge_weighting_params={},  # parameters for the edge weighting function
     tol=1e-2,  # Tolerance. Larger value yields fewer iterations.
 )
-
-new_net  # Final network after the iterations
-emb_list  # List of embedding generated during the iteration. emb_list[t] is the one at the $t$th iteration
-net_list  # List of networks generated during the iteration. net_list[t] is the one at the $t$th iteration
 ```
 
 # Custom embedding and edge weighting
@@ -107,7 +103,34 @@ embedding.models # dictionary of embedding functions
 And the edge weighting function:
 ```python
 from iteremb import edge_weighting
-edge_weighting.models # dictionary of embedding functions
+edge_weighting.models # dictionary of edge weighting functions
+```
+
+You can also implement your custom embedding/edge weighting functions, and pass them to the `iterative_embedding` functions, with argument name `emb_model` and `weighting_model`, respectively. For example,
+
+```python
+import iteremb
+import networkx as nx
+
+net = nx.adjacency_matrix(
+    nx.karate_club_graph()
+)  # the adjacency matrix (scipy sparse matrix format)
+
+new_net, emb_list, net_list = iteremb.iterative_embedding(
+    net,  # Input network
+    dim=16,  # Embedding dimension
+    emb_model = ..., # Your custom embedding model.
+    weighting_model = ...,  # your edge weighting model.
+    max_iter=20,  # Maximum number of iterations
+    emb_params={},  # parameter for the embedding function
+    edge_weighting_params={},  # parameters for the edge weighting function
+    tol=1e-2,  # Tolerance. Larger value yields fewer iterations.
+)
+```
+The emb_model and weighting_model are expected to take the following arguments:
+```python
+    emb_t = emb_model(net_t, d=dim, **emb_params) # net_t: scipy adjacency matrix, emb_t is a numpy array of shape (num. nodes, dim)
+    net_t = weighting_model(net_t, emb_t, **edge_weighting_params)
 ```
 
 # iterEmb
