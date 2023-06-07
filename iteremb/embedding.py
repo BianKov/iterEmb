@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 06:29:17
+# @Last Modified time: 2023-06-07 11:46:01
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -176,8 +176,8 @@ def expISO(G, d, q=None, verbose=False):
     #    -np.matmul(np.matmul(H, np.multiply(D, D)), H) / 2
     # )  # multiply=element-wise product
     Dsq = D**2
-    H_Dsq = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
-    IP = -H_Dsq / 2
+    Dsq_H = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
+    IP = -(Dsq_H - np.mean(Dsq_H, axis=1)[:, np.newaxis]) / 2
 
     # dimension reduction
     if d == N:
@@ -246,11 +246,14 @@ def ISO(G, d):
     D = sparse.csgraph.shortest_path(A, directed=False)
 
     # centering, i.e. the creation of the matrix of expected inner products
-    Dsq = D**2
+    # Dsq = D**2
     # H = sparse.eye(N) - np.ones((N, N)) / N  # centering matrix
     # IP = -(H @ Dsq) @ H / 2  # multiply=element-wise product
-    H_Dsq = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
-    IP = -H_Dsq / 2
+    # H_Dsq = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
+    # IP = -H_Dsq / 2
+    Dsq = D**2
+    Dsq_H = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
+    IP = -(Dsq_H - np.mean(Dsq_H, axis=1)[:, np.newaxis]) / 2
 
     # dimension reduction
     if d == N:
