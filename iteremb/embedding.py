@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:32:06
+# @Last Modified time: 2023-06-08 12:45:26
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -96,14 +96,13 @@ def TREXPIC(G, d, q=None, K=-1.0, verbose=False):
         S[1:]
     )  # d number of singular values are used for determining the directions of the position vectors: from the second to the d+1th one
 
-    numOfErrors = 0
     firstCoordOnHyperboloid = np.abs(
         np.sqrt(S[0]) * U[:, 0]
     )  # to select the upper sheet of the two-sheet hyperboloid, firstCoordOnHyperboloid has to be positive
     is_numerical_error = firstCoordOnHyperboloid < 1
     numOfErrors = np.sum(is_numerical_error)
     r_native = (1 / zeta) * np.arccosh(np.maximum(firstCoordOnHyperboloid, 1))
-    r_native[is_numerical_error] = 0
+    # r_native[is_numerical_error] = 0
 
     # the jth element is the jth coordinate of the node named nodeName in the reduced space
     directionArray = np.einsum("ij,j->ij", U[:, 1:], Ssqrt)
