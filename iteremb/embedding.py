@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-07 11:46:01
+# @Last Modified time: 2023-06-08 12:32:06
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -102,13 +102,13 @@ def TREXPIC(G, d, q=None, K=-1.0, verbose=False):
     )  # to select the upper sheet of the two-sheet hyperboloid, firstCoordOnHyperboloid has to be positive
     is_numerical_error = firstCoordOnHyperboloid < 1
     numOfErrors = np.sum(is_numerical_error)
-    r_negative = (1 / zeta) * np.arccosh(np.maximum(firstCoordOnHyperboloid, 1))
-    r_negative[is_numerical_error] = 0
+    r_native = (1 / zeta) * np.arccosh(np.maximum(firstCoordOnHyperboloid, 1))
+    r_native[is_numerical_error] = 0
 
     # the jth element is the jth coordinate of the node named nodeName in the reduced space
     directionArray = np.einsum("ij,j->ij", U[:, 1:], Ssqrt)
     originalNorm = np.array(np.linalg.norm(directionArray, axis=1)).reshape(-1)
-    Coord = np.einsum("ij,i->ij", directionArray, r_negative / originalNorm)
+    Coord = np.einsum("ij,i->ij", directionArray, r_native / originalNorm)
 
     if numOfErrors > 0:
         raise ValueError(
