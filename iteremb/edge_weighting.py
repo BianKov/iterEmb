@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 22:01:20
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:21:47
+# @Last Modified time: 2023-06-08 12:27:26
 import numpy as np
 from scipy import sparse
 
@@ -12,7 +12,7 @@ weighting_model = lambda f: models.setdefault(f.__name__, f)
 
 def find_edges(A):
     B = sparse.coo_matrix(A)
-    return B.rol, B.col, B.data
+    return B.row, B.col, B.data
 
 
 @weighting_model
