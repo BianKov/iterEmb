@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-02 16:47:58
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 21:04:29
+# @Last Modified time: 2023-06-08 12:22:58
 import os
 import numpy as np
 import networkx as nx
@@ -335,10 +335,6 @@ def to_scipy_matrix(net, return_node_labels=False):
         _net = sparse.csr_matrix(net)
         if return_node_labels:
             _node_labels = np.arange(net.shape[0], dtype=np.int64)
-    elif isinstance(net, np.ndarray):
-        _net = sparse.csr_matrix(net)
-        if return_node_labels:
-            _node_labels = np.arange(net.shape[0], dtype=np.int64)
     else:
         ValueError("Unexpected data type {} for the adjacency matrix".format(type(net)))
 
@@ -353,9 +349,6 @@ def to_networkx(net):
         return net
     elif sparse.issparse(net):
         _net = sparse.csr_matrix(net)
-    elif isinstance(net, np.ndarray):
-        _net = sparse.csr_matrix(net)
     else:
         ValueError("Unexpected data type {} for the adjacency matrix".format(type(net)))
-
     return nx.from_scipy_sparse_array(_net)
