@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 14:21:40
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-03 21:46:29
+# @Last Modified time: 2023-06-04 21:33:56
 # %%
 import numpy as np
 import networkx as nx

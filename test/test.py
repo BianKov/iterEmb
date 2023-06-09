@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-02 16:30:10
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 06:13:41
+# @Last Modified time: 2023-06-04 06:25:53
 import unittest
 
 import networkx as nx
@@ -17,7 +17,12 @@ from collections import Counter
 from iteremb import embedding as em
 from iteremb import utils
 from iteremb import communityDetection as cD
+
+# Embedding module
 from iteremb import embedding
+
+# Edge weighting module
+from iteremb import edge_weighting
 
 
 class TestIterativeEmbedding(unittest.TestCase):
@@ -28,13 +33,20 @@ class TestIterativeEmbedding(unittest.TestCase):
 
     def test_embedding(self):
         dim = 16
-        for name, emb_func in embedding.embedding_models.items():
+        for name, emb_func in embedding.models.items():
             emb = emb_func(G=self.A, d=dim)
             assert emb.shape[1] == dim
 
             # Check if networkx can be accepted
             emb = emb_func(G=self.G, d=dim)
             assert emb.shape[1] == dim
+
+    def test_edge_weighting(self):
+        dim = 16
+        emb = embedding.models["LE"](self.A, d=dim)
+        for name, weighting_func in edge_weighting.models.items():
+            Aw = weighting_func(self.A, emb)
+            assert Aw.shape == self.A.shape
 
 
 #    def test_iterative_embedding(self):
