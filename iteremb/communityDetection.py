@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 22:11:40
+# @Last Modified time: 2023-06-08 12:23:37
 #!/usr/bin/env python3
 
 import numpy as np
@@ -19,7 +19,6 @@ from iteremb import utils
 from scipy import sparse
 import numpy as np
 from scipy import sparse
-import utils
 
 
 def commDetWithWeightThresholding(
