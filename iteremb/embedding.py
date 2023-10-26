@@ -330,7 +330,7 @@ def LE(G, d, scalingFactor=None, verbose=False):
         # in which the smallest trivial eigenvalue of L is now the largest eigenvalue (i.e., 2) followed by
         # the non-trivial eigenvalues
         deg = np.array(A.sum(axis=1)).reshape(-1)
-        D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
+        D_sqrt_inv = sparse.diags(1.0/np.maximum(1e-16,np.sqrt(deg)))
         shifted_Lnorm = (
             sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ A @ D_sqrt_inv
         )
@@ -346,7 +346,7 @@ def LE(G, d, scalingFactor=None, verbose=False):
         Aw = A.copy()
         Aw.data = weight
         deg = np.array(Aw.sum(axis=1)).reshape(-1)
-        D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
+        D_sqrt_inv = sparse.diags(1.0/np.maximum(1e-16,np.sqrt(deg)))
         shifted_Lnorm = (
             sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ Aw @ D_sqrt_inv
         )
