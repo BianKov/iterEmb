@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 22:01:20
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:27:26
+# @Last Modified time: 2023-09-21 12:09:42
 import numpy as np
 from scipy import sparse
 
@@ -91,5 +91,31 @@ def exp_cosine_similarity(A, emb, q=1):
     src, trg, _ = find_edges(A)
     w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1) - 1.0
     w = np.clip(w, -2.0, 0.0)
+    w = np.exp(q * w)
+    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+
+
+@weighting_model
+def exp_dot_similarity(A, emb, q=1):
+    """
+    Computes the exponential cosine similarity between each pair of items in sparse matrix A using embeddings.
+
+    Parameters:
+    -----------
+    A : sparse matrix
+        Sparse matrix representing the user-item interactions.
+    emb : array-like of shape (n_items, n_dimensions)
+        Embedding vectors for each item.
+    q : float
+        Exponential decay parameter.
+
+    Returns:
+    --------
+    similarity_matrix : csr_matrix
+        Sparse exponential cosine similarity matrix between each pair of items in A.
+    """
+    # nemb = np.einsum("ij,i->ij", emb, 1 / np.linalg.norm(emb, axis=1))
+    src, trg, _ = find_edges(A)
+    w = np.array(np.sum(emb[src] * emb[trg], axis=1)).reshape(-1)
     w = np.exp(q * w)
     return sparse.csr_matrix((w, (src, trg)), shape=A.shape)

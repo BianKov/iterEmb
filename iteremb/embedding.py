@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:45:26
+# @Last Modified time: 2023-09-28 12:31:19
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from iteremb import utils
@@ -11,6 +11,7 @@ import networkx as nx
 import math
 from scipy import sparse
 import fastnode2vec  # a fast version of node2vec
+from sklearn.decomposition import TruncatedSVD
 
 models = {}
 embedding_model = lambda f: models.setdefault(f.__name__, f)
@@ -329,10 +330,8 @@ def LE(G, d, scalingFactor=None, verbose=False):
         # in which the smallest trivial eigenvalue of L is now the largest eigenvalue (i.e., 2) followed by
         # the non-trivial eigenvalues
         deg = np.array(A.sum(axis=1)).reshape(-1)
-        D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
-        shifted_Lnorm = (
-            sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ A @ D_sqrt_inv
-        )
+        D_sqrt_inv = sparse.diags(1.0 / np.maximum(1, np.sqrt(deg)))
+        shifted_Lnorm = sparse.diags(np.ones(len(deg))) + D_sqrt_inv @ A @ D_sqrt_inv
     else:  # Laplacian Eigenmaps with heat kernel
         # default: the square of the average of all the link weights, as in https://www.nature.com/articles/s41467-017-01825-5
         if scalingFactor == None:  # use the default setting
@@ -345,13 +344,20 @@ def LE(G, d, scalingFactor=None, verbose=False):
         Aw = A.copy()
         Aw.data = weight
         deg = np.array(Aw.sum(axis=1)).reshape(-1)
+        # deg = np.maximum(deg, 1e-4)
         D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
-        shifted_Lnorm = (
-            sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ Aw @ D_sqrt_inv
-        )
+        shifted_Lnorm = sparse.diags(np.ones(len(deg))) + D_sqrt_inv @ Aw @ D_sqrt_inv
 
+    # model = TruncatedSVD(n_iter=10, n_components=d + 1).fit(shifted_Lnorm)
+    # vals = model.explained_variance_
+    # Coord = model.components_.T
+    # vals, Coord = sparse.linalg.eigs(
+    #    shifted_Lnorm, k=d + 1, which="LM", ncv=8 * (d + 1)
+    # )
     vals, Coord = sparse.linalg.eigs(shifted_Lnorm, k=d + 1, which="LM")
-    order = np.argsort(-vals)[1:]
+    vals = np.real(vals)
+    Coord = np.real(Coord)
+    order = np.argsort(-vals)[1:d]
     vals, Coord = vals[order], Coord[:, order]
     return Coord
 

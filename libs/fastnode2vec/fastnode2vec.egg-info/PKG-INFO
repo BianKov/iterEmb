@@ -9,6 +9,11 @@ License: MIT
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: numba
+Requires-Dist: gensim
+Requires-Dist: click
+Requires-Dist: tqdm
 
 # fastnode2vec
 

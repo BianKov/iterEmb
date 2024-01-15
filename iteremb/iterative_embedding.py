@@ -2,7 +2,7 @@
 # @Author: Sadamori Kojaku
 # @Date:   2023-06-03 22:10:13
 # @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-04 21:37:57
+# @Last Modified time: 2023-09-21 12:08:49
 # %%
 import numpy as np
 from iteremb import embedding
@@ -71,6 +71,10 @@ iterative_embedding_models = {
         "weighting_model": edge_weighting.models["cosine_similarity"],
     },
     "expNode2vec": {
+        "emb_model": embedding.models["node2vec"],
+        "weighting_model": edge_weighting.models["exp_cosine_similarity"],
+    },
+    "testNode2vec": {
         "emb_model": embedding.models["node2vec"],
         "weighting_model": edge_weighting.models["exp_cosine_similarity"],
     },
