@@ -344,7 +344,9 @@ def LE(G, d, scalingFactor=None, verbose=False):
         D = sparse.diags(deg)
         L = D - Aw
 
-    vals, Coord = sparse.linalg.eigsh(L,k=d+1,M=D,which='SM',ncv=min(N,max(2*(2*(d+1)+1),2*20)))
+    vals, Coord = sparse.linalg.eigsh(
+        L, k=d + 1, M=D, which="SM", ncv=min(N, max(2 * (2 * (d + 1) + 1), 2 * 20))
+    )
     order = np.argsort(-vals)[1:]
     vals, Coord = vals[order], Coord[:, order]
     return Coord
