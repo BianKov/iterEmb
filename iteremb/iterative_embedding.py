@@ -52,19 +52,19 @@ def iterative_embedding(
 iterative_embedding_models = {
     "TREXPIC": {
         "emb_model": embedding.models["TREXPIC"],
-        "weighting_model": edge_weighting.models["cosine_distance"],
+        "weighting_model": edge_weighting.models["adjusted_exp_cosine_distance"],
     },
     "expISO": {
         "emb_model": embedding.models["expISO"],
-        "weighting_model": edge_weighting.models["cosine_distance"],
+        "weighting_model": edge_weighting.models["adjusted_exp_cosine_distance"],
     },
     "ISO": {
         "emb_model": embedding.models["ISO"],
-        "weighting_model": edge_weighting.models["cosine_distance"],
+        "weighting_model": edge_weighting.models["adjusted_exp_cosine_distance"],
     },
     "LE": {
         "emb_model": embedding.models["LE"],
-        "weighting_model": edge_weighting.models["cosine_distance"],
+        "weighting_model": edge_weighting.models["adjusted_exp_cosine_distance"],
     },
     "node2vec": {
         "emb_model": embedding.models["node2vec"],

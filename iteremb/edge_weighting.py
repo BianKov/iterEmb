@@ -5,6 +5,7 @@
 # @Last Modified time: 2023-06-08 12:27:26
 import numpy as np
 from scipy import sparse
+from sicpy import stats
 
 models = {}
 weighting_model = lambda f: models.setdefault(f.__name__, f)
@@ -66,6 +67,42 @@ def cosine_distance(A, emb, **params):
     w = 1.0 - np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
     w = np.clip(w, 0.0, 2.0)
     return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+
+
+@weighting_model
+def adjusted_exp_cosine_distance(A, emb, **params):
+    """
+    Computes the exponential cosine distance between each pair of items in sparse matrix A using embeddings.
+
+    Parameters:
+    -----------
+    A : sparse matrix
+        Sparse matrix representing the user-item interactions.
+    emb : array-like of shape (n_items, n_dimensions)
+        Embedding vectors for each item.
+    **params : dict
+        Dictionary containing additional optional parameters.
+
+    Returns:
+    --------
+    distance_matrix: csr_matrix
+        Sparse cosine distance matrix between each pair of items in A.
+
+    """
+    nemb = np.einsum("ij,i->ij", emb, 1 / np.linalg.norm(emb, axis=1))
+    src, trg, _ = find_edges(A)
+    d = 1.0 - np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
+    d = np.clip(d, 0.0, 2.0)
+
+    deg = A.sum(axis=1).A1
+    deg_mode = stats.mode(deg)[0]
+    if len(deg_mode) > 1:
+        deg_mode = deg_mode.min()
+
+    deg_ave = deg.mean()
+    qFactor = 10 * (deg_ave / deg_mode)
+    d = np.exp(qFactor * d)  # ????
+    return sparse.csr_matrix((d, (src, trg)), shape=A.shape)
 
 
 @weighting_model
