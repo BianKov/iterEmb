@@ -325,15 +325,10 @@ def LE(G, d, scalingFactor=None, verbose=False):
     weight = A.data.copy()  # edge weight
     is_unweighted = np.max(weight) == np.min(weight)
     if is_unweighted:
-        # shifted normalized laplacian shift the eigenvalues by
-        # 2I - L_norm = I + D^{-1/2} A D^{-1/2}
-        # in which the smallest trivial eigenvalue of L is now the largest eigenvalue (i.e., 2) followed by
-        # the non-trivial eigenvalues
         deg = np.array(A.sum(axis=1)).reshape(-1)
-        D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
-        shifted_Lnorm = (
-            sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ A @ D_sqrt_inv
-        )
+        # Laplacian matrix
+        D = sparse.diags(deg)
+        L = D - A
     else:  # Laplacian Eigenmaps with heat kernel
         # default: the square of the average of all the link weights, as in https://www.nature.com/articles/s41467-017-01825-5
         if scalingFactor == None:  # use the default setting
@@ -346,12 +341,10 @@ def LE(G, d, scalingFactor=None, verbose=False):
         Aw = A.copy()
         Aw.data = weight
         deg = np.array(Aw.sum(axis=1)).reshape(-1)
-        D_sqrt_inv = sparse.diags(1.0 / np.sqrt(deg))
-        shifted_Lnorm = (
-            sparse.eye(deg.shape[0], format="csr") + D_sqrt_inv @ Aw @ D_sqrt_inv
-        )
+        D = sparse.diags(deg)
+        L = D - Aw
 
-    vals, Coord = sparse.linalg.eigs(shifted_Lnorm, k=d + 1, which="LM")
+    vals, Coord = sparse.linalg.eigsh(L,k=d+1,M=D,which='SM',ncv=min(N,max(2*(2*(d+1)+1),2*20)))
     order = np.argsort(-vals)[1:]
     vals, Coord = vals[order], Coord[:, order]
     return Coord
