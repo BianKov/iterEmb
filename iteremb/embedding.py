@@ -347,7 +347,8 @@ def LE(G, d, scalingFactor=None, verbose=False):
     vals, Coord = sparse.linalg.eigsh(
         L, k=d + 1, M=D, which="SM", ncv=min(N, max(2 * (2 * (d + 1) + 1), 2 * 20))
     )
-    order = np.argsort(-vals)[1:]
+    vals, Coord = np.real(vals), np.real(Coord)
+    order = np.argsort(vals)[1:]
     vals, Coord = vals[order], Coord[:, order]
     return Coord
 
