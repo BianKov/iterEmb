@@ -20,5 +20,5 @@ setup(
     url="https://github.com/BianKov/iterEmb",
     packages=["iteremb"],
     install_requires=[line.strip() for line in open("requirements.txt")],
-    python_requires=">=3.6",
+    python_requires=">=3.9",
 )
