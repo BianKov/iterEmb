@@ -1,3 +1,5 @@
+[![Unit Test & Deploy](https://github.com/BianKov/iterEmb/actions/workflows/main.yml/badge.svg)](https://github.com/BianKov/iterEmb/actions/workflows/main.yml)
+
 # iterEmb
 
 This is a Python package for iterative embedding of networks. It is based on the paper "xxxx" by xxx. @Bianka, could you complete this?
