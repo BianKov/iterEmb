@@ -12,7 +12,6 @@ import scipy.stats  # for testing outliers during the dimension selection of the
 from scipy import (
     sparse,
 )  # needed for TREXPIC, Isomap (singular value decomposition) and Laplacian Eigenmaps (eigendecomposition)
-import fastnode2vec  # a fast version of node2vec
 
 
 # A function for loading the undirected edge list of a network to be embedded. Self-loops are removed, multi-edges are converted to single edges, and only the largest connected component is returned as a NetworkX Graph.
