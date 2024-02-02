@@ -177,4 +177,3 @@ def example_preprocessing_func(network, emb_params, edge_weighting_params):
 | expNode2vec  | node2vec        | exp_cosine_similarity      | q_factor_determination        |
 
 See `iteremb/iterative_embedding_models.py`, `iteremb/embedding.py`, and `iteremb/edge_weighting.py` for the implementations.
-
