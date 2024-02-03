@@ -113,7 +113,7 @@ def custom_edge_weighting_model(A, emb, **params):
     pass
 ```
 
-Then, pass the functions to the `iterative_embedding` functio by
+Then, pass the functions to the `iterative_embedding` function by
 
 ```python
 import iteremb
