@@ -2,7 +2,7 @@
 
 # iterEmb
 
-This is a Python package for iterative embedding of networks. It is based on the paper "xxxx" by xxx. @Bianka, could you complete this?
+This is a Python package for iterative embedding of networks. It is based on the paper "Iterative embedding and reweighting of complex networks reveals community structure" by Bianka Kovács, Sadamori Kojaku, Gergely Palla and Santo Fortunato.
 
 # How to install
 ```bash
