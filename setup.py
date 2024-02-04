@@ -13,7 +13,7 @@ setup(
     version="0.0.0",
     author="BIANKA KOVÁCS",
     license="MIT",
-    author_email="surrmaon@gmail.com",
+    author_email="kovacs.bianka@ecolres.hu",
     description="Iterative Embedding",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
