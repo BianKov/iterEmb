@@ -1,3 +1,4 @@
+# %%
 # -*- coding: utf-8 -*-
 # @Author: Sadamori Kojaku
 # @Date:   2023-05-25 16:46:11
@@ -10,8 +11,9 @@ import numpy as np
 import networkx as nx
 import math
 from scipy import sparse
-import fastnode2vec  # a fast version of node2vec
+from iteremb import fastnode2vec  # a fast version of node2vec
 
+# %%
 models = {}
 embedding_model = lambda f: models.setdefault(f.__name__, f)
 
@@ -56,7 +58,9 @@ def TREXPIC(G, d, q=None, K=-1.0, verbose=False):
     zeta = math.sqrt(-K)
 
     # create the matrix to be reduced
-    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A, directed=False)
+    shortestPathLengthMatrix = sparse.csgraph.shortest_path(
+        A.astype(float), directed=False
+    )
     if q == None:  # use the default setting of the multiplying factor
         maxSPL = np.ma.masked_invalid(shortestPathLengthMatrix).max()
         qmin = math.log(1.0 / 0.9999) * maxSPL
@@ -155,7 +159,9 @@ def expISO(G, d, q=None, verbose=False):
         )
 
     # create the matrix to be reduced
-    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A, directed=False)
+    shortestPathLengthMatrix = sparse.csgraph.shortest_path(
+        A.astype(float), directed=False
+    )
 
     if q == None:  # use the default setting of the multiplying factor
         maxSPL = np.ma.masked_invalid(shortestPathLengthMatrix).max()
@@ -243,7 +249,7 @@ def ISO(G, d):
         )
 
     # create the matrix to be reduced
-    D = sparse.csgraph.shortest_path(A, directed=False)
+    D = sparse.csgraph.shortest_path(A.astype(float), directed=False)
 
     # centering, i.e. the creation of the matrix of expected inner products
     # Dsq = D**2

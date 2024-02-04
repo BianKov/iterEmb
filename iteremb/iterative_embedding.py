@@ -19,12 +19,19 @@ def iterative_embedding(
     max_iter=20,
     emb_params={},
     edge_weighting_params={},
+    preprocessing_func=None,
     tol=1e-2,
 ):
     net_t = utils.to_scipy_matrix(net)
     emb_list, net_list = [], []
     prev_ave_edge_weight = np.inf
     pbar = tqdm(total=max_iter)
+
+    if preprocessing_func is not None:
+        emb_params, edge_weighting_params = preprocessing_func(
+            net_t, emb_params, edge_weighting_params
+        )
+    print(edge_weighting_params)
     for it in range(max_iter):
         # Embedding and network construction
         emb_t = emb_model(net_t, d=dim, **emb_params)
@@ -73,5 +80,8 @@ iterative_embedding_models = {
     "expNode2vec": {
         "emb_model": embedding.models["node2vec"],
         "weighting_model": edge_weighting.models["exp_cosine_similarity"],
+        "preprocessing_func": edge_weighting.preprocessing_funcs[
+            "q_factor_determination"
+        ],
     },
 }

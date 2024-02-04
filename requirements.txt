@@ -1,0 +1,11 @@
+numpy
+networkx
+community
+infomap
+scikit-learn
+scipy
+tqdm
+matplotlib
+scipy
+numba
+gensim
