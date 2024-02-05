@@ -40,9 +40,8 @@ def cosine_similarity(A, emb, **params):
     """
     nemb = np.einsum("ij,i->ij", emb, 1 / np.linalg.norm(emb, axis=1))
     src, trg, _ = find_edges(A)
-    w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
-    w = w + 1
-    w = np.clip(w, -0.0, 2.0)
+    w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1) + 1.0
+    w = np.clip(w, 0.0, 2.0)
     return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
 
 
