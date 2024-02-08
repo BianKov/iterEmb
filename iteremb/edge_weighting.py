@@ -48,7 +48,6 @@ def cosine_similarity(A, emb, **params):
     A.data-=1
     return A
 
-
 @weighting_model
 def cosine_distance(A, emb, **params):
     """

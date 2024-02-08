@@ -169,7 +169,7 @@ def example_preprocessing_func(network, emb_params, edge_weighting_params):
 ## Off-the-shelf embedding models:
 
 
-| Key          | Embedding Model | Weighting Model            | Preprocessing Function         |
+| Key          | Embedding model | Edge weighting method      | Preprocessing Function         |
 |--------------|-----------------|----------------------------|--------------------------------|
 | TREXPIC      | TREXPIC         | cosine_distance            | None                           |
 | expISO       | expISO          | cosine_distance            | None                           |
