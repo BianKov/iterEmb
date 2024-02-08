@@ -40,8 +40,11 @@ def iterative_embedding(
         if n_components != 1:
             warning("The network becomes disconnected. Halting the iterations.")
             break
-        
-        emb_t = emb_model(net_t, d=dim, **emb_params)    
+        try:
+            emb_t = emb_model(net_t, d=dim, **emb_params)
+        except ArpackError:
+            warning("Failed to embed the network due to inconvergence of eigensolver. Halting the iterations.")
+            break
         net_t = weighting_model(net_t, emb_t, **edge_weighting_params)
         
         # Save
