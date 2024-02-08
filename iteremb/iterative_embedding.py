@@ -28,6 +28,9 @@ def iterative_embedding(
     prev_ave_edge_weight = np.inf
     pbar = tqdm(total=max_iter)
     
+    n_components, _ = connected_components(csgraph=net_t, directed=False, return_labels=True)
+
+    assert n_components != 1, "The network must be connected. Halting the iterations."
 
     if preprocessing_func is not None:
         emb_params, edge_weighting_params = preprocessing_func(
@@ -35,11 +38,6 @@ def iterative_embedding(
         )
     for it in range(max_iter):
         # Embedding and network construction
-        n_components, _ = connected_components(csgraph=net_t, directed=False, return_labels=True)
-
-        if n_components != 1:
-            warning("The network becomes disconnected. Halting the iterations.")
-            break
         try:
             emb_t = emb_model(net_t, d=dim, **emb_params)
         except ArpackError:
