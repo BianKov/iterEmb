@@ -10,7 +10,7 @@ import numpy as np
 import networkx as nx
 import math
 from scipy import sparse
-import fastnode2vec  # a fast version of node2vec
+from iteremb import fastnode2vec
 
 models = {}
 embedding_model = lambda f: models.setdefault(f.__name__, f)
