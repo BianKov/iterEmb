@@ -42,9 +42,11 @@ def cosine_similarity(A, emb, **params):
     src, trg, _ = find_edges(A)
     w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
     w = w + 1
-    w = np.clip(w, 0.0, 2.0)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
-
+    w = np.clip(w, -0.0, 2.0)
+    
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A.data-=1
+    return A
 
 @weighting_model
 def cosine_distance(A, emb, **params):
@@ -70,7 +72,10 @@ def cosine_distance(A, emb, **params):
     src, trg, _ = find_edges(A)
     w = 1.0 - np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
     w = np.clip(w, 0.0, 2.0)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A.data-=1
+    return A
+
 
 
 @weighting_model
@@ -98,7 +103,10 @@ def exp_cosine_similarity(A, emb, q=1):
     w = np.clip(w, -2.0, 0.0)
 
     w = np.exp(q * w)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+    
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A.data-=1
+    return A
 
 
 @preprocessing_function
