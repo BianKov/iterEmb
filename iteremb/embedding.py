@@ -56,7 +56,7 @@ def TREXPIC(G, d, q=None, K=-1.0, verbose=False):
     zeta = math.sqrt(-K)
 
     # create the matrix to be reduced
-    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A, directed=False)
+    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A.astype(float), directed=False)
     if q == None:  # use the default setting of the multiplying factor
         maxSPL = np.ma.masked_invalid(shortestPathLengthMatrix).max()
         qmin = math.log(1.0 / 0.9999) * maxSPL
@@ -155,7 +155,7 @@ def expISO(G, d, q=None, verbose=False):
         )
 
     # create the matrix to be reduced
-    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A, directed=False)
+    shortestPathLengthMatrix = sparse.csgraph.shortest_path(A.astype(float), directed=False)
 
     if q == None:  # use the default setting of the multiplying factor
         maxSPL = np.ma.masked_invalid(shortestPathLengthMatrix).max()
@@ -178,7 +178,6 @@ def expISO(G, d, q=None, verbose=False):
     Dsq = D**2
     Dsq_H = Dsq - np.mean(Dsq, axis=0)[np.newaxis, :]
     IP = -(Dsq_H - np.mean(Dsq_H, axis=1)[:, np.newaxis]) / 2
-
     # dimension reduction
     if d == N:
         U, S, VT = np.linalg.svd(
@@ -243,7 +242,7 @@ def ISO(G, d):
         )
 
     # create the matrix to be reduced
-    D = sparse.csgraph.shortest_path(A, directed=False)
+    D = sparse.csgraph.shortest_path(A.astype(float), directed=False)
 
     # centering, i.e. the creation of the matrix of expected inner products
     # Dsq = D**2
