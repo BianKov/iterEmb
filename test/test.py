@@ -28,11 +28,13 @@ from iteremb import edge_weighting
 class TestIterativeEmbedding(unittest.TestCase):
     def setUp(self):
         self.G = nx.karate_club_graph()
-        self.A = nx.adjacency_matrix(self.G)
+        self.A = sparse.csr_matrix(nx.to_numpy_array(self.G))
+        self.A = self.A + self.A.T
+        self.A.data = self.A.data.astype(float)
         self.A.data = self.A.data * 0 + 1
 
     def test_embedding(self):
-        dim = 16
+        dim = 24
         for name, emb_func in embedding.models.items():
             emb = emb_func(G=self.A, d=dim)
             assert emb.shape[1] == dim
@@ -42,7 +44,7 @@ class TestIterativeEmbedding(unittest.TestCase):
             assert emb.shape[1] == dim
 
     def test_edge_weighting(self):
-        dim = 16
+        dim = 24 
         emb = embedding.models["LE"](self.A, d=dim)
         for name, weighting_func in edge_weighting.models.items():
             Aw = weighting_func(self.A, emb)

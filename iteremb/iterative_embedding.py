@@ -9,7 +9,8 @@ from iteremb import embedding
 from iteremb import edge_weighting
 from iteremb import utils
 from tqdm import tqdm
-
+import warnings
+from scipy.sparse.csgraph import connected_components
 
 def iterative_embedding(
     net,
@@ -26,17 +27,24 @@ def iterative_embedding(
     emb_list, net_list = [], []
     prev_ave_edge_weight = np.inf
     pbar = tqdm(total=max_iter)
+    
+    n_components, _ = connected_components(csgraph=net_t, directed=False, return_labels=True)
+
+    assert n_components != 1, "The network must be connected. Halting the iterations."
 
     if preprocessing_func is not None:
         emb_params, edge_weighting_params = preprocessing_func(
             net_t, emb_params, edge_weighting_params
         )
-    print(edge_weighting_params)
     for it in range(max_iter):
         # Embedding and network construction
-        emb_t = emb_model(net_t, d=dim, **emb_params)
+        try:
+            emb_t = emb_model(net_t, d=dim, **emb_params)
+        except ArpackError:
+            warning("Failed to embed the network due to inconvergence of eigensolver. Halting the iterations.")
+            break
         net_t = weighting_model(net_t, emb_t, **edge_weighting_params)
-
+        
         # Save
         emb_list.append(emb_t)
         net_list.append(net_t)

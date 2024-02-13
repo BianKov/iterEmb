@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 # @Author: Sadamori Kojaku
-# @Date:   2023-06-03 22:01:20
-# @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:27:26
 import numpy as np
 from scipy import sparse
 from scipy import stats
@@ -42,8 +39,10 @@ def cosine_similarity(A, emb, **params):
     src, trg, _ = find_edges(A)
     w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1) + 1.0
     w = np.clip(w, 0.0, 2.0)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
-
+    
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape) #ensure that links with 0 weight are also retained
+    A.data-=1
+    return A
 
 @weighting_model
 def cosine_distance(A, emb, **params):
@@ -69,7 +68,10 @@ def cosine_distance(A, emb, **params):
     src, trg, _ = find_edges(A)
     w = 1.0 - np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
     w = np.clip(w, 0.0, 2.0)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape) #ensure that links with 0 weight are also retained
+    A.data-=1
+    return A
+
 
 
 @weighting_model
@@ -97,7 +99,10 @@ def exp_cosine_similarity(A, emb, q=1):
     w = np.clip(w, -2.0, 0.0)
 
     w = np.exp(q * w)
-    return sparse.csr_matrix((w, (src, trg)), shape=A.shape)
+    
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A.data-=1
+    return A
 
 
 @preprocessing_function
