@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 # @Author: Sadamori Kojaku
-# @Date:   2023-06-03 22:01:20
-# @Last Modified by:   Sadamori Kojaku
-# @Last Modified time: 2023-06-08 12:27:26
 import numpy as np
 from scipy import sparse
 from scipy import stats
@@ -40,11 +37,10 @@ def cosine_similarity(A, emb, **params):
     """
     nemb = np.einsum("ij,i->ij", emb, 1 / np.linalg.norm(emb, axis=1))
     src, trg, _ = find_edges(A)
-    w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
-    w = w + 1
-    w = np.clip(w, -0.0, 2.0)
+    w = np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1) + 1.0
+    w = np.clip(w, 0.0, 2.0)
     
-    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape) #ensure that links with 0 weight are also retained
     A.data-=1
     return A
 
@@ -72,7 +68,7 @@ def cosine_distance(A, emb, **params):
     src, trg, _ = find_edges(A)
     w = 1.0 - np.array(np.sum(nemb[src] * nemb[trg], axis=1)).reshape(-1)
     w = np.clip(w, 0.0, 2.0)
-    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape)
+    A = sparse.csr_matrix((w+1, (src, trg)), shape=A.shape) #ensure that links with 0 weight are also retained
     A.data-=1
     return A
 
